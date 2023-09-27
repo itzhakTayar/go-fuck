@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Button</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .hidden {
+        display: none;
+      }
+      .container {
+        text-align: center;
+      }
+
+      #click-button {
+        font-size: 2rem;
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      #click-button:hover {
+        background-color: #2980b9;
+      }
+
+      #output-text {
+        display: none;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: 20px;
+        animation: changeColor 2s infinite alternate;
+      }
+
+      @keyframes changeColor {
+        0% {
+          color: red;
+        }
+        25% {
+          color: blue;
+        }
+        50% {
+          color: green;
+        }
+        75% {
+          color: orange;
+        }
+        100% {
+          color: purple;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button id="click-button">Click me</button>
+      <div id="output-text">🤪לך תזדיין ימנייאק</div>
+    </div>
+
+    <script>
+      const button = document.getElementById('click-button');
+      const outputText = document.getElementById('output-text');
+
+      button.addEventListener('click', () => {
+        outputText.style.display = 'block';
+        button.classList.add('hidden');
+      });
+    </script>
+  </body>
+</html>
